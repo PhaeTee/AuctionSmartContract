@@ -61,7 +61,7 @@ contract Auctioning {
         require (msg.sender== owner, "you are not owner");
         require (block.timestamp >= bidEndTime, "Auction has not ended yet");
 
-        IERC721(bidToken).safeTransferFrom(address(this),_highestBidder, _highestBid);
+        IERC721(nftAddress).safeTransferFrom(address(this),_highestBidder, _highestBid);
         emit AuctionEnded(highestBidder, highestBid);
     }
 }
